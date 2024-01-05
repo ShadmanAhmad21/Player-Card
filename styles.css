@@ -1,0 +1,106 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary-color: #3498db; /* New primary color */
+  --secondary-color: #2ecc71; /* New secondary color */
+  --background-color: #ecf0f1; /* New background color */
+  --text-color: #34495e; /* New text color */
+}
+
+body {
+  background-color: var(--background-color);
+  text-align: center;
+  padding: 20px; /* Increased padding for better spacing */
+}
+
+.title,
+.options-label,
+.team-stats,
+footer {
+  color: var(--text-color);
+}
+
+.title {
+  margin: 1.5rem 0; /* Adjusted margin for better spacing */
+}
+
+.team-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  font-size: 1.5rem; /* Increased font size */
+  margin: 1.5rem 0; /* Adjusted margin for better spacing */
+}
+
+.options-label {
+  font-size: 1.3rem; /* Increased font size */
+}
+
+/* Add these styles for the dropdown */
+select {
+  appearance: none; /* Remove default styles on some browsers */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  text-indent: 1px; /* Remove default arrow in Firefox */
+  text-overflow: ''; /* Remove default arrow in Edge */
+  border: 2px solid var(--primary-color); /* Border color for the dropdown */
+  background-color: var(--background-color); /* Background color for the dropdown */
+  padding: 10px; /* Adjust padding for better spacing */
+  font-size: 1rem; /* Font size for the dropdown */
+  color: var(--text-color); /* Text color for the dropdown */
+  border-radius: 5px; /* Border radius for a rounded appearance */
+  cursor: pointer; /* Show pointer cursor on hover */
+}
+
+/* Add these styles for the dropdown arrow icon */
+select::after {
+  content: '\25BC'; /* Unicode character for a down arrow */
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: var(--text-color); /* Text color for the arrow */
+}
+
+/* Style the dropdown options */
+select option {
+  background-color: var(--background-color); /* Background color for options */
+  color: var(--text-color); /* Text color for options */
+}
+
+/* Style the dropdown on hover/focus */
+select:hover,
+select:focus {
+  border-color: var(--secondary-color); /* Change border color on hover/focus */
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.player-card {
+  background-color: var(--primary-color); /* New primary color for player cards */
+  color: var(--white); /* Set text color to white for better contrast */
+  padding: 1.5rem;
+  margin: 1.5rem;
+  width: 100%; /* Full width for better responsiveness */
+  max-width: 300px; /* Added max-width to prevent cards from becoming too wide */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added box shadow for a subtle lift */
+}
+
+@media (max-width: 768px) {
+  .team-stats {
+    flex-direction: column;
+  }
+}
